@@ -58,7 +58,7 @@ const sentence5 = helpers1[3] + helpers1[7] + nouns1[7] + helpers1[7] + helpers1
 
 console.log(sentence5);
 
-const sentence6 = helpers1[3] + helpers1[7] + nouns1[8] + helpers1[7] + numbers1[1] + numbers1[7] + helpers1[7] + helpers1[8] + helpers1[7] + helpers1[3] + helpers1[7] + nouns1[9] + helpers1[7] + helpers1[4]+ helpers1[7]+ nouns1[11];
+const sentence6 = helpers1[3] + helpers1[7] + nouns1[8] + helpers1[7] + helpers1[7] + helpers1[4] + helpers1[7]  + numbers1[1] + numbers1[7] + helpers1[7] + helpers1[8] + helpers1[7] + helpers1[3] + helpers1[7] + nouns1[9] + helpers1[7] + helpers1[4]+ helpers1[7]+ nouns1[11];
 
 console.log(sentence6);
 
