@@ -1,4 +1,4 @@
-
+// Finished
 
 console.groupCollapsed('1. Parašykite funkciją, kuri grąžina pirmą masyvo elementą.');
 {
@@ -7,11 +7,10 @@ console.groupCollapsed('1. Parašykite funkciją, kuri grąžina pirmą masyvo e
   }
   const numbers = [1, 2, 3, 4, 5,];
   const text = ['one', 'two', 'three', 'four', 'five',];
-  const returnsFirstArray = returnsFirst(numbers)
-  const returnsFirstArrayText = returnsFirst(text)
-  console.log('First number', returnsFirstArray)
-  console.log('First number', returnsFirstArrayText)
-  
+  const returnsFirstArray = returnsFirst(numbers);
+  const returnsFirstArrayText = returnsFirst(text);
+  console.log('First number', returnsFirstArray);
+  console.log('First number', returnsFirstArrayText);
 }
 console.groupEnd();
 
@@ -22,7 +21,7 @@ console.groupCollapsed('2. Parašykite funkciją, kuri pašalina pirmą masyvo e
     let i = 0;
     while (i < array.length) {
       i++;
-      array[i - 1] = array[i]
+      array[i - 1] = array[i];
     }
     --array.length;
     return firstElement;
@@ -45,8 +44,8 @@ console.groupCollapsed('3. Parašykite funkciją, kuri grąžina paskutinį masy
   const text2 = ['one', 'two', 'three', 'four', 'five',];
   const lastElement = returnLast(numbers2);
   const lastElementText = returnLast(text2);
-  console.log('Last number', lastElement)
-  console.log('Last number', lastElementText)
+  console.log('Last number', lastElement);
+  console.log('Last number', lastElementText);
 }
 console.groupEnd();
 
@@ -103,33 +102,37 @@ console.groupCollapsed('7. Parašykite funkciją, kuri atspausdina kiekvieno mas
   function allIndexDown(array) {
     let i = 0;
     while (i < array.length) {
-      { console.log(i); }
+      { console.log(i); };
       i++;
     }
-     return array
   }
 
   const numbers6 = [5, 6, 7, 8, 9,];
   const text6 = ['five', 'six', 'seven', 'eight', 'nine', 'ten'];
-  console.log('All Index down')
+  console.log('All Index down');
   allIndexDown(numbers6);
-  console.log('Gap')
+  console.log('All text Index down');
   allIndexDown(text6);
 }
 console.groupEnd();
 
 console.groupCollapsed('8. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento reikšmes eilutėmis');
 {
-  function allIndexLine(array) {
-    return array.indexOf(array)
+  function allElementsLine(array) {
+    let i = 0;
+    while (i <= array.length - 1) {
+      console.log(array[i]);
+      i++;
+    }
   }
 
   const numbers7 = [5, 6, 7, 8, 9,];
   const text7 = ['five', 'six', 'seven', 'eight',];
-  const lastElements = allIndexLine(numbers7);
-  const lastElementsText = allIndexLine(text7);
-  console.log(lastElements);
-  console.log(lastElementsText);
+  console.log('All Elements down');
+  allElementsLine(numbers7);
+  console.log('All text Elements down');
+  allElementsLine(text7);
+  
 }
 console.groupEnd();
 
@@ -138,31 +141,111 @@ console.groupCollapsed('9. Parašykite funkciją, kuri atspausdina kiekvieno mas
 // [1] => reikšmė
 // [2] => reikšmė
 {
-  // ... sprendimas ir spausdinimas
+  function allIndexElementsLine(array) {
+    let i = 0;
+    while (i <= array.length - 1) {
+      console.log(`[${[i]}] => ${array[i]}`);
+      i++;
+    }
+  }
+
+  const numbers8 = [5, 6, 7, 8, 9,];
+  const text8 = ['five', 'six', 'seven', 'eight',];
+  console.log('All Index and Elements down');
+  allIndexElementsLine(numbers8);
+  console.log('All text Index and Elements down');
+  allIndexElementsLine(text8);
 }
 console.groupEnd();
 
 console.groupCollapsed('10. Parašykite funkciją, kuri atspausdina masyvo elementus atbuline tvarka eilutėmis, iš galo.');
 {
-  // ...sprendimas ir spausdinimas
+  function allIndexElementsLineRev(array) {
+    let i = array.length - 1;
+    while (i >= 0) {
+      { console.log(array[i]); };
+      i--;
+    }
+  }
+
+  const numbers9 = [5, 6, 7, 8, 9,];
+  const text9 = ['five', 'six', 'seven', 'eight',];
+  console.log('All Elements reverse down');
+  allIndexElementsLineRev(numbers9);
+  console.log('All text Elements reverse down');
+  allIndexElementsLineRev(text9);
 }
 console.groupEnd();
 
 console.groupCollapsed('11. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indeksus vienoje eilutėje: 0 1 2 3 ...');
 {
-  // ...sprendimas ir spausdinimas
+  function allIndexElementLine(array) {
+  let resultLine = '';
+  let i = 0;
+    while (i < array.length) {
+      const isNotLast = i < array.length - 1;
+      resultLine += [i];
+      i++;
+      if (isNotLast) {
+        resultLine += ', ';
+      }
+    }
+    console.log(resultLine)
+  }
+  const numbers10 = [5, 6, 7, 8, 9,];
+  const text10 = ['five', 'six', 'seven', 'eight',];
+  console.log('All Index inline');
+  allIndexElementLine(numbers10);
+  console.log('All text Index inline');
+  allIndexElementLine(text10);
 }
 console.groupEnd();
 
 console.groupCollapsed('12. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento reikšmes vienoje eilutėje: -111 2 -9 48');
 {
-  // ...sprendimas ir spausdinimas
+  function allIndexElementLine(array) {
+    let resultLine = '';
+    let i = 0;
+      while (i < array.length) {
+        const isNotLast = i < array.length - 1;
+        resultLine += array[i];
+        i++;
+        if (isNotLast) {
+          resultLine += ', ';
+        }
+      }
+      console.log(resultLine)
+    }
+    const numbers11 = [5, 6, 7, 8, 9,];
+    const text11 = ['five', 'six', 'seven', 'eight',];
+    console.log('All Elements inline');
+    allIndexElementLine(numbers11);
+    console.log('All text Elements inline');
+    allIndexElementLine(text11);
 }
 console.groupEnd();
 
 console.groupCollapsed('13. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indekso ir reikšmių poras vienoje eilutėje, tokiu formatu:');
 //  [0]=>17 [1]=>8 [2]=>88 ..
 {
-  // ...sprendimas ir spausdinimas
+  function allIndexElementLine(array) {
+    let resultLine = '';
+    let i = 0;
+      while (i < array.length) {
+        const isNotLast = i < array.length - 1;
+        resultLine += `[${[i]}] => ${array[i]}`;
+        i++;
+        if (isNotLast) {
+          resultLine += ', ';
+        }
+      }
+      console.log(resultLine)
+    }
+    const numbers12 = [5, 6, 7, 8, 9,];
+    const text12 = ['five', 'six', 'seven', 'eight',];
+    console.log('All Index and Elements inline');
+    allIndexElementLine(numbers12);
+    console.log('All text Index and Elements inline');
+    allIndexElementLine(text12);
 }
 console.groupEnd();

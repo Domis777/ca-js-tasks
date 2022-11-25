@@ -16,6 +16,8 @@ let helpers = ['in', 'with', 'on', 'my', 'is', 'a', 'the', ' '];
 // 4. apple is with my sister
 // 5. Papildyti masyvą žodžiais, ir sukurti dar 3 +-logiškus sakinius.
 
+// Finishe
+
 console.group('1. Task - my sister is in the lake');
 
 const sentence1 = helpers[3] + helpers[7] + nouns[1] + helpers[7] + helpers[4] + helpers[7] + helpers[0] + helpers[7] + helpers[6] + helpers[7] + nouns[6];
