@@ -138,7 +138,7 @@ console.groupCollapsed('WHILE');
   {
     let i = 2;
     while (i <= 10) {
-    if (i % 2 == 0) {
+    if (i % 2 === 0) {
       console.log(i); }
     i++;
     }
@@ -157,7 +157,7 @@ console.groupCollapsed('WHILE');
   {
     let i = 3;
     while (i >= -9) {
-    if (i % 3 == 0) {
+    if (i % 3 === 0) {
       console.log(i); }
     --i;
     }
@@ -167,7 +167,7 @@ console.groupCollapsed('WHILE');
   {
     let i = 2;
     while (i >= -6) {
-    if (i % 2 == 0) {
+    if (i % 2 === 0) {
       console.log(i); }
     --i;
     }
@@ -177,7 +177,7 @@ console.groupCollapsed('WHILE');
   {
     let i = 2;
     while (i > -11) {
-    if (i % 1 == 0) {
+    if (i % 1 === 0) {
       console.log(i); }
     i -= 3;
     }
