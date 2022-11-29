@@ -1,12 +1,56 @@
 console.groupCollapsed('1 - https://edabit.com/challenge/nuXdWHAoHv9y38sn7');
 {
+    // function sortDrinkByPrice(drinks) {
+    //     drinks.sort(function (a, b){
+    //         return a.price - b.price;
+    //     })
+    //     return drinks.sort();
+    // }
 
+    function sortDrinkByPrice(drinks) {
+        drinks.sort((a, b) => (a.price > b.price) ? 1 : -1)
+
+        return drinks.sort();
+    };
+
+    const drinks1 = [
+        {name: 'lemonade', price: 90}, 
+        {name: 'lime', price: 432}, 
+        {name: 'peach', price: 23}
+    ];
+
+    const drinks2 = [
+        {name: 'water', price: 120}, 
+        {name: 'lime', price: 80}, 
+        {name: 'peach', price: 90}
+    ];
+
+    const result1 = sortDrinkByPrice(drinks1)
+    const result2 = sortDrinkByPrice(drinks2)
+
+    console.log(
+        result1,
+        result2,
+        );
 }
 console.groupEnd();
 
 console.groupCollapsed('2 - https://edabit.com/challenge/9KEKJG5PZTFmG3Zau');
 {
+    function addName(obj, name, value) {
+        obj[name] = value
+        return obj
+    };
 
+    const result1 = addName({}, "Brutus", 300)
+    const result2 = addName({ piano: 500 }, "Brutus", 400)
+    const result3 = addName({ piano: 500, stereo: 300 }, "Caligula", 440)
+
+    console.log(
+    result1,
+    result2,
+    result3,
+    );
 }
 console.groupEnd();
 

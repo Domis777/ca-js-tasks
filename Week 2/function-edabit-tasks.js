@@ -514,3 +514,28 @@ console.groupCollapsed('33 - https://edabit.com/challenge/QkvDge63crdGnMfvM');
         );
 }
 console.groupEnd();
+
+console.groupCollapsed('34 - https://edabit.com/challenge/vvuAkYEAArrZvmp6X');
+{
+    function bitwiseAND(n1, n2) {
+        return n1 & n2
+    }
+    
+    function bitwiseOR(n1, n2) {
+        return n1 | n2
+    }
+    
+    function bitwiseXOR(n1, n2) {
+        return n1 ^ n2
+    }
+
+    const result1 =  bitwiseAND(7, 12);
+    const result2 =  bitwiseOR(7, 12);
+    const result3 =  bitwiseXOR(7, 12);
+    console.log(
+        result1,
+        result2,
+        result3
+        );
+}
+console.groupEnd();
