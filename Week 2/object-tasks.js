@@ -1,6 +1,11 @@
 console.groupCollapsed('1 - https://edabit.com/challenge/nuXdWHAoHv9y38sn7');
 {
     // function sortDrinkByPrice(drinks) {
+    //     drinks.sort((a, b) => (a.price > b.price) ? 1 : -1);
+    //     return drinks.sort();
+    // };
+
+    // function sortDrinkByPrice(drinks) {
     //     drinks.sort(function (a, b){
     //         return a.price - b.price;
     //     })
@@ -8,9 +13,12 @@ console.groupCollapsed('1 - https://edabit.com/challenge/nuXdWHAoHv9y38sn7');
     // }
 
     function sortDrinkByPrice(drinks) {
-        drinks.sort((a, b) => (a.price > b.price) ? 1 : -1);
-        return drinks.sort();
-    };
+        function byPrice(a, b){
+            return a.price - b.price;
+        }
+        return drinks.sort(byPrice);
+    }
+
 
     const drinks1 = [
         {name: 'lemonade', price: 90}, 
