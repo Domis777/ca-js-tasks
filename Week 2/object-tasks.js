@@ -64,8 +64,8 @@ console.groupEnd();
 console.groupCollapsed('3 - https://edabit.com/challenge/48EJWLhF224na8po3');
 {
     function generation(x, y) {
-        let f = ['great grandmother','grandmother','mother','me!','daughter','granddaughter','great granddaughter'];
-        let m = ['great grandfather','grandfather','father','me!','son','grandson','great grandson'];
+        const f = ['great grandmother','grandmother','mother','me!','daughter','granddaughter','great granddaughter'];
+        const m = ['great grandfather','grandfather','father','me!','son','grandson','great grandson'];
         return y === 'm' ? m[3+x] : f[3+x];
     };
     
