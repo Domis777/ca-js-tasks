@@ -87,7 +87,7 @@ console.groupCollapsed('4. Sukurtite masyvą su lytimis ir uždirbamu pinigų ki
     return `Sex: ${incomeSex.sex}, Income: ${incomeSex.income}.`
   }
   const incomeAndSex = people.map(allIncomeSex);
-  console.log(incomeAndSex)
+  console.log(incomeAndSex);
 }
 console.groupEnd();
 
@@ -97,27 +97,27 @@ console.groupCollapsed('5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, 
     return `Name: ${namesSex.name}, Surname: ${namesSex.surname}, Sex: ${namesSex.sex}.`;
   }
   const namesAndSex = people.map(allPeopleNamesSex);
-  console.log(namesAndSex)
+  console.log(namesAndSex);
 }
 console.groupEnd();
 
 console.groupCollapsed('6. Atspausdinkite visus vyrus');
 {
   function allPeopleMale(isMale){
-    return isMale.sex === 'male'
+    return isMale.sex === 'male';
   }
-  const areMale = people.filter(allPeopleMale)
-  console.log(areMale)
+  const areMale = people.filter(allPeopleMale);
+  console.log(areMale);
 }
 console.groupEnd();
 
 console.groupCollapsed('7. Atspausdinkite visas moteris');
 {
   function allPeopleFemale(isfemale){
-    return isfemale.sex === 'female'
+    return isfemale.sex === 'female';
   }
-  const areFemale = people.filter(allPeopleFemale)
-  console.log(areFemale)
+  const areFemale = people.filter(allPeopleFemale);
+  console.log(areFemale);
 }
 console.groupEnd();
 
@@ -125,10 +125,10 @@ console.groupCollapsed('8. Atspausdinkite žmonių vardus ir pavardes, kurie tur
 {
   function allPeopleHaveCar(peopleCars){
     if (peopleCars.hasCar === true)
-      return `Name: ${peopleCars.name}, Surname: ${peopleCars.surname}.` 
+      return `Name: ${peopleCars.name}, Surname: ${peopleCars.surname}.`; 
   }
-  const haveCar = people.map(allPeopleHaveCar)
-  console.log(haveCar)
+  const haveCar = people.map(allPeopleHaveCar);
+  console.log(haveCar);
 }
 console.groupEnd();
 
@@ -144,16 +144,16 @@ console.groupEnd();
 
 console.groupCollapsed('10. Sukurkite objektą, kuriame būtų apskaičiuotas vairuojančių žmonių kiekis pagal lytį');
 {
-  let female = 0
-  let male = 0
+  let female = 0;
+  let male = 0;
   function allPeopleByMale(countCars){
-    if (countCars.sex === 'female' && countCars.hasCar === true)
+    if (countCars.sex === 'female' && countCars.hasCar === true) 
       female++;
-    else if (countCars.sex === 'male' && countCars.hasCar === true) 
+    else if (countCars.sex === 'male' && countCars.hasCar === true)
       male++;
   }
   const sexCountMale = people.filter(allPeopleByMale);
-  console.log(`Female count: ${female}\nMale count: ${male}`)
+  console.log(`Female count: ${female}\nMale count: ${male}`);
 }
 console.groupEnd();
 

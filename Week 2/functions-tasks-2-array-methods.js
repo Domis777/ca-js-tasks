@@ -4,35 +4,9 @@ const numbers = [1, 2, -2, 6, -5, 9, 1.02, 45, -69, 77, -12, 2, 8, -2, -4, 59, 7
 console.group('1. Padauginti masyvo narius iš 2 ir išsaugoti naujame masyve');
 console.log('---');
 {
-  // function mulArrBy2(arr) {
-  //   for (let i = 0; i < arr.length; i++) {
-  //     arr[i] *= 2;
-  //   }
-  //   return arr;
-  // }
-
-  // function mulArrBy2(arr) {
-  //   let multiTwo = [...arr];
-  //   for (let i = 0; i < multiTwo.length; i++) {
-  //     multiTwo[i] = arr[i] * 2;
-  //   }
-  //   return multiTwo
-  // }
-
-  // function mulArrBy2(arr) {
-  //   let multiTwo = arr.slice();
-  //   for (let i = 0; i < multiTwo.length; i++) {
-  //     multiTwo[i] = arr[i] * 2;
-  //   }
-  //   return multiTwo;
-  // }
-
   function mulArrBy2(arr) {
-    let multiTwo = arr.slice();
-    for (let i = 0; i < multiTwo.length; i++) {
-      multiTwo[i] *= 2;
-    }
-    return multiTwo;
+    const multiArr = arr.map((value) => value * 2);
+    return multiArr;
   }
   console.log({
     numbers,
@@ -46,30 +20,10 @@ console.log();
 console.group('2. Pakelti masyvo narius kvadratu ir išsaugoti naujame masyve');
 console.log('---');
 {
-  // function powerArrBy2(arr) {
-  //   let multiSquare = arr.slice();
-  //   for (let i = 0; i < multiSquare.length; i++) {
-  //     multiSquare[i] = arr[i] * arr[i];
-  //   }
-  //   return multiSquare;
-  // }
-
-  // function powerArrBy2(arr) {
-  //   let multiSquare = arr.slice();
-  //   for (let i = 0; i < multiSquare.length; i++) {
-  //     multiSquare[i] = arr[i] ** 2;
-  //   }
-  //   return multiSquare;
-  // }
-
   function powerArrBy2(arr) {
-    let multiSquare = arr.slice();
-    for (let i = 0; i < multiSquare.length; i++) {
-      multiSquare[i] **= 2;
-    }
-    return multiSquare;
+    const squareArr = arr.map((value) => value ** 2);
+    return squareArr;
   }
-
   console.log({
     numbers,
     result: powerArrBy2(numbers)
@@ -83,13 +37,9 @@ console.group('3. Padauginti masyvo narius iš jų index\'o (vietos masyve) ir i
 console.log('---');
 {
   function mulArrElementsByIndex(arr) {
-    let multiToIndex = arr.slice();
-    for (i = 0; i < multiToIndex.length; i++) {
-      multiToIndex[i] = arr[i] * i;
-    }
-    return multiToIndex;
+    const multiByIndexArr = arr.map((value, index) => value * index);
+    return multiByIndexArr;
   }
-
   console.log({
     numbers,
     result: mulArrElementsByIndex(numbers)
@@ -103,15 +53,8 @@ console.group('4. Atrinkti tiktai teigimų elementų masyvą');
 console.log('---');
 {
   function filterPositives(arr) {
-    let positiveNumb = [];
-    let numbA = 0;
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] > 0){
-        positiveNumb[numbA] = arr[i];
-        numbA++;
-      }
-    }
-    return positiveNumb
+    const positiveArr = arr.filter((value) => value > 0);
+    return positiveArr;
   }
 
   console.log({
@@ -127,15 +70,8 @@ console.group('5. Atrinkti tiktai neigiamų elementų masyvą');
 console.log('---');
 {
   function filterNegatives(arr) {
-    let negativeNumb = [];
-    let numbB = 0;
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] < 0){
-        negativeNumb[numbB] = arr[i];
-        numbB++;
-      }
-    }
-    return negativeNumb
+    const negativeArr = arr.filter((value) => value < 0);
+    return negativeArr;
   }
   console.log({
     numbers,
@@ -150,15 +86,8 @@ console.group('6. Atrinkti tiktai lyginių skaičių masyvą');
 console.log('---');
 {
   function filterEquals(arr) {
-    let evenNumb = [];
-    let numbC = 0;
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] % 2 === 0){
-        evenNumb[numbC] = arr[i];
-        numbC++;
-      }
-    }
-    return evenNumb
+    const evenArr = arr.filter((value) => value % 2 === 0);
+    return evenArr;
   }
   console.log({
     numbers,
@@ -173,15 +102,8 @@ console.group('7. Atrinkti tiktai nelyginių skaičių masyvą');
 console.log('---');
 {
   function filterOdds(arr) {
-      let oddNumb = [];
-      let numbD = 0;
-      for (i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 === 1){
-          oddNumb[numbD] = arr[i];
-          numbD++;
-        }
-      }
-      return oddNumb
+    const oddArr = arr.filter((value) => value % 2 === 1);
+    return oddArr;
   }
   console.log({
     numbers,
@@ -195,13 +117,8 @@ console.log();
 console.group("8. Visas neigiamas vertes masyve padaryti teigiamomis ir išsaugoti į naują masyvą");
 {
   function arrAbsoluteValues(arr) {
-    let negativeToPositive = arr.slice();
-    for (let i = 0; i < negativeToPositive.length; i++) {
-      if(negativeToPositive[i] < 0) {
-        negativeToPositive[i] *= -1;
-      }
-    }
-    return negativeToPositive;
+    const absoluteArr = arr.map((value) => (value ** 2) ** 0.5);
+    return absoluteArr;
   }
 
   console.log('---');
@@ -218,11 +135,8 @@ console.group('9. Pakelti visas masyvo reikšmes laipsniu \'index\' ir išsaugot
 console.log('---');
 {
   function powArrElementsByIndex(arr) {
-    let multiSquare = arr.slice();
-    for (let i = 0; i < multiSquare.length; i++) {
-      multiSquare[i] **= i;
-    }
-    return multiSquare;
+    const indexbyArr = arr.map((value, index) => value ** index );
+    return indexbyArr;
   }
   console.log({
     numbers,
@@ -237,15 +151,8 @@ console.group('10. Atrinkti tik natūralių skaičių masyvą');
 console.log('---');
 {
   function filterNaturals(arr) {
-    let naturalNumb = [];
-    let numbE = 0;
-    for (i = 0; i < arr.length; i++) {
-      if (arr[i] % 1 === 0 && arr[i] > 0 ){
-        naturalNumb[numbE] = arr[i];
-        numbE++;
-      }
-    }
-    return naturalNumb;
+    const naturalbyArr = arr.filter((value) => value % 1 === 0 && value > 0);
+    return naturalbyArr;
   }
   console.log({
     numbers,
@@ -260,11 +167,8 @@ console.group('11. Suapvalinti visas masyvo reikšmes iki sveikų skaičių ir i
 console.log('---');
 {
   function absArrElements(arr) {
-    let abslNumb = arr.slice();
-    for (i = 0; i < abslNumb.length; i++) {
-        abslNumb[i] = Math.round((arr[i]));
-      }
-    return abslNumb;
+    const absbyArr = arr.map((value) => Math.round(value));
+    return absbyArr;
   }
   console.log({
     numbers,
@@ -278,10 +182,7 @@ console.group('12. Atrinkti kas antrą elementą');
 console.log('---');
 {
   function filterEverySecond(arr) {
-    const everySecond = [];
-    for (let i = 0; i < arr.length; i += 2) {
-      everySecond[i] = arr[i];
-    }
+    const everySecond = arr.filter((value, index) => index % 2 === 0);
     return everySecond;
   }
   console.log({
@@ -296,10 +197,7 @@ console.group('13. Atrinkti kas penktą elementą');
 console.log('---');
 {
   function filterEveryFifth(arr) {
-    const everyFifth = [];
-    for (let i = 0; i < arr.length; i += 5) {
-      everyFifth[i] = arr[i];
-    }
+    const everyFifth = arr.filter((value, index) => index % 5 === 0);
     return everyFifth;
   }
   console.log({
@@ -315,8 +213,7 @@ console.group('14. Sukurti funkciją, kuri ima masyvą ir atspausdina kiekvieną
 console.log('---');
 {
   function printArr(arr) {
-    for (let i = 0; i <= arr.length -1; i++)
-    console.log(`[${i}] => [${arr[i]}]`);
+    arr.forEach((value, index) =>   console.log(`[${index}] => ${value}`));
   }
   printArr(numbers);
 }
@@ -327,10 +224,7 @@ console.group('15. Sukurti funkciją, kuri ima masyvą ir grąžina visų elemen
 console.log('---');
 {
   function sumArr(arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-      sum += arr[i];
-    }
+    const sum = arr.reduce((value1, value2,) => value1 + value2);
     return sum;
   } 
 
@@ -346,10 +240,7 @@ console.group('16. Sukurti funkciją, kuri ima masyvą ir grąžina visų elemen
 console.log('---');
 {
   function avgArr(arr) {
-    let avg = 0;;
-    for (let i = 0; i < arr.length; i++) {
-      avg += arr[i];
-    }
+    const avg = arr.reduce((value1, value2) => value1 + value2);
     return avg / arr.length;
   }
 
@@ -365,13 +256,8 @@ console.group('17. Sukurti funkciją, kuri ima masyvą ir grąžina didžiausią
 console.log('---');
 {
   function arrMax(arr) {
-    let maxArr = [0];
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] > maxArr) {
-        maxArr = arr[i];
-      }
-    }
-    return maxArr;
+    const max = arr.reduce((value, index) => (value > index) ? value : index);
+    return max;
   }
 
   console.log({
@@ -386,13 +272,8 @@ console.group('18. Sukurti funkciją, kuri ima masyvą ir grąžina mažiausią 
 console.log('---');
 {
   function arrMin(arr) {
-    let maxArr = [0];
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] < maxArr) {
-        maxArr = arr[i];
-      }
-    }
-    return maxArr;
+    const min = arr.reduce((value, index) => (value < index) ? value : index);
+    return min;
   }
 
   console.log({
