@@ -57,7 +57,7 @@ const people = [
 console.groupCollapsed('1. Atspausdinkite visus žmones eilutėmis');
 {
   function allPeopleInLine(allPeople){
-    console.log(`${allPeople.name} ${allPeople.surname} ${allPeople.sex} ${allPeople.age} ${allPeople.income} ${allPeople.married} ${allPeople.hasCar}`);
+    console.log(allPeople);
   }
   people.forEach(allPeopleInLine);
 }
@@ -84,18 +84,20 @@ console.groupEnd();
 console.groupCollapsed('4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pagal pradinį žmonių masyvą');
 {
   function allIncomeSex(incomeSex){
-    console.log(`${incomeSex.income} - ${incomeSex.sex}`);
+    return `Sex: ${incomeSex.sex}, Income: ${incomeSex.income}.`
   }
-  people.map(allIncomeSex);
+  const incomeAndSex = people.map(allIncomeSex);
+  console.log(incomeAndSex)
 }
 console.groupEnd();
 
 console.groupCollapsed('5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pradinį žmonių masyvą');
 {
   function allPeopleNamesSex(namesSex){
-    console.log(`${namesSex.name} - ${namesSex.surname} - ${namesSex.sex}`);
+    return `Name: ${namesSex.name}, Surname: ${namesSex.surname}, Sex: ${namesSex.sex}.`;
   }
-  people.map(allPeopleNamesSex);
+  const namesAndSex = people.map(allPeopleNamesSex);
+  console.log(namesAndSex)
 }
 console.groupEnd();
 
@@ -121,11 +123,12 @@ console.groupEnd();
 
 console.groupCollapsed('8. Atspausdinkite žmonių vardus ir pavardes, kurie turi mašinas');
 {
-  // function allPeopleHaveCar(peopleCars){
-  //   return peopleCars.hasCar < 0 ? `${peopleCars.name}`: `${peopleCars.name}`;
-  // }
-  // const haveCar = people.filter(allPeopleHaveCar)
-  // console.log(haveCar)
+  function allPeopleHaveCar(peopleCars){
+    if (peopleCars.hasCar === true)
+      return `Name: ${peopleCars.name}, Surname: ${peopleCars.surname}.` 
+  }
+  const haveCar = people.map(allPeopleHaveCar)
+  console.log(haveCar)
 }
 console.groupEnd();
 
@@ -141,33 +144,66 @@ console.groupEnd();
 
 console.groupCollapsed('10. Sukurkite objektą, kuriame būtų apskaičiuotas vairuojančių žmonių kiekis pagal lytį');
 {
-  function allPeopleByMale(countMale){
-    return countMale.sex === 'female' ? 0 : countMale.sex
-  }
-  function allPeopleByFemale(countFemale){
-    return countFemale.sex === 'female' ? 0 : countFemale.sex
+  let female = 0
+  let male = 0
+  function allPeopleByMale(countCars){
+    if (countCars.sex === 'female' && countCars.hasCar === true)
+      female++;
+    else if (countCars.sex === 'male' && countCars.hasCar === true) 
+      male++;
   }
   const sexCountMale = people.filter(allPeopleByMale);
-  const sexCountFemale = people.filter(allPeopleByFemale);
-  console.log('Male', sexCountMale, 'Female', sexCountFemale)
+  console.log(`Female count: ${female}\nMale count: ${male}`)
 }
 console.groupEnd();
 
 console.groupCollapsed('11. Performuokite žmonių masyvą, jog kiekvieno žmogaus savybė "income", taptų "salary"');
 {
-
+  function incomeTosalary(incomeSalary) {
+    return {
+      name: incomeSalary.name,
+      surname: incomeSalary.surname,
+      sex: incomeSalary.sex,
+      age: incomeSalary.age,
+      salary: incomeSalary.income,
+      married: incomeSalary.married,
+      hasCar: incomeSalary.hasCar,
+    }
+  }
+  const incomeNameChange = people.map(incomeTosalary);
+  console.log(incomeNameChange);
 }
 console.groupEnd();
 
 console.groupCollapsed('12. Suformuokite žmonių masyvą iš objektų, kuriuose nebūtų lyties, vardo ir pavardės');
 {
-
+  function removeSexSurnameName(removeSexNameSur) {
+    return {
+      age: removeSexNameSur.age,
+      salary: removeSexNameSur.income,
+      married: removeSexNameSur.married,
+      hasCar: removeSexNameSur.hasCar,
+    }
+  }
+  const remove = people.map(removeSexSurnameName);
+  console.log(remove);
 }
 console.groupEnd();
 
 console.groupCollapsed('13. Suformuokite žmonių masyvą  iš objektų, kuriuose "name" ir "surname" savybės, būtų pakeistos "fullname" savybe');
 {
-  // ...sprendimas ir spausdinimas
+  function changeNameSurname(toFullname) {
+    return {
+      fullname: `${toFullname.name} ${toFullname.surname}`,
+      sex: toFullname.sex,
+      age: toFullname.age,
+      salary: toFullname.income,
+      married: toFullname.married,
+      hasCar: toFullname.hasCar,
+    }
+  }
+  const fullNameChange = people.map(changeNameSurname);
+  console.log(fullNameChange);
 }
 console.groupEnd();
 
