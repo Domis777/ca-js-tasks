@@ -56,73 +56,112 @@ const people = [
 ];
 console.groupCollapsed('1. Atspausdinkite visus žmones eilutėmis');
 {
-  // ...sprendimas ir spausdinimas
+  function allPeopleInLine(allPeople){
+    console.log(`${allPeople.name} ${allPeople.surname} ${allPeople.sex} ${allPeople.age} ${allPeople.income} ${allPeople.married} ${allPeople.hasCar}`);
+  }
+  people.forEach(allPeopleInLine);
 }
 console.groupEnd();
 
-console.groupCollapsed('2. Atpausdinkite visus žmonių varus ir pavardes, atskirtus brūkšneliu');
+console.groupCollapsed('2. Atpausdinkite visus žmonių vadrus ir pavardes, atskirtus brūkšneliu');
 {
-  // ...sprendimas ir spausdinimas
+  function allPeopleNames(fullnames){
+    console.log(`${fullnames.name} - ${fullnames.surname}`);
+  }
+  people.forEach(allPeopleNames);
 }
 console.groupEnd();
 
 console.groupCollapsed('3. Atspausdinkite visų žmonių vardus ir pavardes bei santuokos statusą');
 {
-  // ...sprendimas ir spausdinimas
+  function allPeopleNamesMarried(namesMarried){
+    console.log(`${namesMarried.name} - ${namesMarried.surname} - are married: ${namesMarried.married}`);
+  }
+  people.forEach(allPeopleNamesMarried);
 }
 console.groupEnd();
 
 console.groupCollapsed('4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pagal pradinį žmonių masyvą');
 {
-  // ...sprendimas ir spausdinimas
+  function allIncomeSex(incomeSex){
+    console.log(`${incomeSex.income} - ${incomeSex.sex}`);
+  }
+  people.map(allIncomeSex);
 }
 console.groupEnd();
 
 console.groupCollapsed('5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pradinį žmonių masyvą');
 {
-  // ...sprendimas ir spausdinimas
+  function allPeopleNamesSex(namesSex){
+    console.log(`${namesSex.name} - ${namesSex.surname} - ${namesSex.sex}`);
+  }
+  people.map(allPeopleNamesSex);
 }
 console.groupEnd();
 
 console.groupCollapsed('6. Atspausdinkite visus vyrus');
 {
-  // ...sprendimas ir spausdinimas
+  function allPeopleMale(isMale){
+    return isMale.sex === 'male'
+  }
+  const areMale = people.filter(allPeopleMale)
+  console.log(areMale)
 }
 console.groupEnd();
 
 console.groupCollapsed('7. Atspausdinkite visas moteris');
 {
-  // ...sprendimas ir spausdinimas
+  function allPeopleFemale(isfemale){
+    return isfemale.sex === 'female'
+  }
+  const areFemale = people.filter(allPeopleFemale)
+  console.log(areFemale)
 }
 console.groupEnd();
 
 console.groupCollapsed('8. Atspausdinkite žmonių vardus ir pavardes, kurie turi mašinas');
 {
-  // ...sprendimas ir spausdinimas
+  // function allPeopleHaveCar(peopleCars){
+  //   return peopleCars.hasCar < 0 ? `${peopleCars.name}`: `${peopleCars.name}`;
+  // }
+  // const haveCar = people.filter(allPeopleHaveCar)
+  // console.log(haveCar)
 }
 console.groupEnd();
 
 console.groupCollapsed('9. Atspausdinkite žmones kurie yra susituokę');
 {
-  // ...sprendimas ir spausdinimas
+  function allPeopleIsMarried(peopleMarried){
+    return peopleMarried.married
+  }
+  const haveMarried = people.filter(allPeopleIsMarried)
+  console.log(haveMarried)
 }
 console.groupEnd();
 
 console.groupCollapsed('10. Sukurkite objektą, kuriame būtų apskaičiuotas vairuojančių žmonių kiekis pagal lytį');
 {
-  // ...sprendimas ir spausdinimas
+  function allPeopleByMale(countMale){
+    return countMale.sex === 'female' ? 0 : countMale.sex
+  }
+  function allPeopleByFemale(countFemale){
+    return countFemale.sex === 'female' ? 0 : countFemale.sex
+  }
+  const sexCountMale = people.filter(allPeopleByMale);
+  const sexCountFemale = people.filter(allPeopleByFemale);
+  console.log('Male', sexCountMale, 'Female', sexCountFemale)
 }
 console.groupEnd();
 
 console.groupCollapsed('11. Performuokite žmonių masyvą, jog kiekvieno žmogaus savybė "income", taptų "salary"');
 {
-  // ...sprendimas ir spausdinimas
+
 }
 console.groupEnd();
 
 console.groupCollapsed('12. Suformuokite žmonių masyvą iš objektų, kuriuose nebūtų lyties, vardo ir pavardės');
 {
-  // ...sprendimas ir spausdinimas
+
 }
 console.groupEnd();
 
