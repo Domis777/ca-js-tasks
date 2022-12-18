@@ -203,65 +203,138 @@ console.groupEnd();
 
 console.groupCollapsed('1. Atspausdinti visus Informatikos fakulteto studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const findIF = students.filter(function (searchFaculty) {
+    return searchFaculty.faculty === 'Informatikos fakultetas';
+  });
+
+  findIF.forEach(student => console.log(student));
 }
 console.groupEnd();
 
 console.groupCollapsed('2. Atspausdinti visus Chemijos fakulteto studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const findChem = students.filter(function (searchFaculty) {
+    return searchFaculty.faculty === 'Chemijos fakultetas';
+  });
+
+  findChem.forEach(student => console.log(student));
 }
 console.groupEnd();
 
 console.groupCollapsed('3. Atspausdinti visus Elektros ir elektronikos fakulteto studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const findEE = students.filter(function (searchFaculty) {
+    return searchFaculty.faculty === 'Elektros ir elektronikos fakultetas';
+  });
+
+  findEE.forEach(student => console.log(student));
 }
 console.groupEnd();
 
 console.groupCollapsed('4. Atspausdinti tik pirmo kurso studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const findCourseOne = students.filter(function (searchCourse) {
+    return searchCourse.course === 1;
+  });
+
+  findCourseOne.forEach(student => console.log(student));
 }
 console.groupEnd();
 
 console.groupCollapsed('5. Atspausdinti tik antro kurso studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const findCourseTwo = students.filter(function (searchCourse) {
+    return searchCourse.course === 2;
+  });
+
+  findCourseTwo.forEach(student => console.log(student));
 }
 console.groupEnd();
 
 console.groupCollapsed('6. Atspausdinti tik trečio kurso studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const findCourseThree = students.filter(function (searchCourse) {
+    return searchCourse.course === 3;
+  });
+
+  findCourseThree.forEach(student => console.log(student));
 }
 console.groupEnd();
 
 console.groupCollapsed('7. Atspausdinti tik ketvirto kurso studentus');
 {
-  // ... sprendimas ir spausdinimas
+  const findCoursefour = students.filter(function (searchCourse) {
+    return searchCourse.course === 4;
+  });
+
+  findCoursefour.forEach(student => console.log(student));
 }
 console.groupEnd();
 
 console.groupCollapsed('8. Iš students masyvo atrinkti ir atspausdinti visų studentų vidurkius');
 {
-  // ... sprendimas ir spausdinimas
+  function countCredits(findModules) {
+    let sum = 0;
+    findModules.forEach(module => sum += module.credits);
+    return sum;
+  }
+
+  function marksAvg(modules) {
+    let sum = 0;
+    modules.marks.forEach(mark => sum += mark);
+    return Math.round(sum / modules.marks.length);
+  }
+
+  function studentsSemAvg(semester) {
+    const semCredits = countCredits(semester.modules);
+    let semAvgValue = 0;
+    semester.modules.forEach(module => {
+      const semAvgValueComponent = marksAvg(module) * module.credits;
+      semAvgValue += semAvgValueComponent;
+    })
+    return semAvgValue / semCredits;
+  }
+
+  
+  students.map(student => {
+      return console.log(student.name, studentsSemAvg(student))
+    })
 }
 
 console.groupCollapsed('9. Atspausdinti visų Informatikos fakulteto studentų vidurkius');
 {
-  // ... sprendimas ir spausdinimas
+  const SemesterFindIF = students.filter(function (searchFaculty) {
+    return searchFaculty.faculty === 'Informatikos fakultetas';
+  });
+
+  SemesterFindIF.map(student => {
+    return console.log(student.name, studentsSemAvg(student))
+  })
+
 }
 console.groupEnd();
 
 console.groupCollapsed('10. Atspausdinti visų Chemijos fakulteto studentų vidurkius');
 {
-  // ... sprendimas ir spausdinimas
+
+  const SemesterfindChem = students.filter(function (searchFaculty) {
+    return searchFaculty.faculty === 'Chemijos fakultetas';
+  });
+
+  SemesterfindChem.map(student => {
+    return console.log(student.name, studentsSemAvg(student))
+  })
 }
 console.groupEnd();
 
 console.groupCollapsed('11. Atspausdinti visų Elektros ir elektronikos fakulteto studentų vidurkius');
 {
-  // ... sprendimas ir spausdinimas
+  const SemesterfindEE = students.filter(function (searchFaculty) {
+    return searchFaculty.faculty === 'Elektros ir elektronikos fakultetas';
+  });
+
+  SemesterfindEE.map(student => {
+    return console.log(student.name, studentsSemAvg(student))
+  })
 }
 console.groupEnd();

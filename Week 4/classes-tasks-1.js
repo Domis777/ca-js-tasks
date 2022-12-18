@@ -37,3 +37,74 @@
 6. Po padidinimo, vėl atsispausdinkite objektus ir pažiūrėkite pakitusias Automobilis objektų savybes.
 
 */
+
+class Automobilis {
+  marke;
+  modelis;
+  kaina;
+
+constructor(marke, modelis, kaina,){
+  this.marke = marke;
+  this.modelis = modelis;
+  this.kaina = kaina;
+}
+
+}
+
+const car1 = new Automobilis ('Audi', 'A7', 150000)
+const car2 = new Automobilis ('Volvo', 'S90', 100000)
+const car3 = new Automobilis ('BMW', 'X5', 80000)
+
+// console.log({
+//   car1,
+//   car2,
+//   car3,
+// })
+
+console.log(car1)
+console.log(car2)
+console.log(car3)
+
+// console.log(
+//   car1.modelis,
+//   car2.modelis,
+//   car3.modelis,
+// )
+
+console.log(car1.modelis)
+console.log(car2.modelis)
+console.log(car3.modelis)
+
+// console.log(
+//   car1.marke,
+//   car2.marke,
+//   car3.marke,
+// )
+
+console.log(car1.marke)
+console.log(car2.marke)
+console.log(car3.marke)
+    
+// console.log(
+//   car1.kaina,
+//   car2.kaina,
+//   car3.kaina,
+// )
+
+console.log(car1.kaina)
+console.log(car2.kaina)
+console.log(car3.kaina)
+
+car1.kaina = car1.kaina + 100
+car2.kaina = car2.kaina + 100
+car3.kaina = car3.kaina + 100
+
+// console.log(
+//   car1.kaina,
+//   car2.kaina,
+//   car3.kaina,
+// )
+
+console.log(car1)
+console.log(car2)
+console.log(car3)

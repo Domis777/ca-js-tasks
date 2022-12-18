@@ -4,20 +4,20 @@ console.groupCollapsed('1. - https://edabit.com/challenge/ZngT4zDckDugt2JGY');
     constructor(name, age, height, weight) {
       this.name = name;
       this.age = age;
-      this.height = height
-      this.weight = weight
+      this.height = height;
+      this.weight = weight;
     }
 
     getAge() {
-      return `${this.name} is age ${this.age}`
+      return `${this.name} is age ${this.age}`;
     }
 
     getHeight() {
-      return `${this.name} is ${this.height}cm`
+      return `${this.name} is ${this.height}cm`;
     }
 
     getWeight() {
-      return `${this.name} weighs ${this.weight}kg`
+      return `${this.name} weighs ${this.weight}kg`;
     }
   }
 }
@@ -28,22 +28,23 @@ console.groupCollapsed('2. - https://edabit.com/challenge/yxKoCKemzacK6PECM');
   class Calculator {
     number1;
     number2;
+
     construct(numeber1, number2) {
-      this.number1 = number1
-      this.number2 = number2
+      this.number1 = number1;
+      this.number2 = number2;
     }
 
     add(number1, number2) {
-      return number1 + number2
+      return number1 + number2;
     }
     subtract(number1, number2) {
-      return number1 - number2
+      return number1 - number2;
     }
     multiply(number1, number2) {
-      return number1 * number2
+      return number1 * number2;
     }
     divide(number1, number2) {
-      return number1 / number2
+      return number1 / number2;
     }
   }
 }
@@ -52,11 +53,12 @@ console.groupEnd();
 console.groupCollapsed('3. - https://edabit.com/challenge/kGLhgwGaLJsCMS7wS');
 {
   class Employee {
+
     constructor(firstname, lastname) {
-      this.firstname = firstname
-      this.lastname = lastname
-      this.fullname = firstname + ' ' + lastname
-      this.email = firstname.toLowerCase() + '.' + lastname.toLowerCase() + '@company.com'
+      this.firstname = firstname;
+      this.lastname = lastname;
+      this.fullname = firstname + ' ' + lastname;
+      this.email = firstname.toLowerCase() + '.' + lastname.toLowerCase() + '@company.com';
     }
   }
 }
@@ -65,6 +67,7 @@ console.groupEnd();
 console.groupCollapsed('4. - https://edabit.com/challenge/iwdZiFucR5wkQsFHu');
 {
   class Person {
+
     constructor(name, age) {
       this.name = name;
       this.age = age;
@@ -72,11 +75,11 @@ console.groupCollapsed('4. - https://edabit.com/challenge/iwdZiFucR5wkQsFHu');
 
     compareAge(other) {
       if (this.age < other.age) {
-        return `${other.name} is older than me.`
+        return `${other.name} is older than me.`;
       } else if (this.age > other.age) {
-        return `${other.name} is younger than me.`
+        return `${other.name} is younger than me.`;
       } else {
-        return `${other.name} is the same age as me.`
+        return `${other.name} is the same age as me.`;
       }
     }
   }
@@ -86,26 +89,28 @@ console.groupEnd();
 console.groupCollapsed('5. - https://edabit.com/challenge/Hgb38yhWGwJCMHbRQ');
 {
   class Rectangle {
+
     constructor(sideA, sideB) {
-      this.sideA = sideA
-      this.sideB = sideB
+      this.sideA = sideA;
+      this.sideB = sideB;
     }
-    getArea() { return this.sideA * this.sideB }
-    getPerimeter() { return (this.sideA + this.sideB) * 2 }
+    getArea() { return this.sideA * this.sideB };
+    getPerimeter() { return (this.sideA + this.sideB) * 2 };
   }
 
 
   class Circle {
-    line
-    constructor(line) {
-      this.line = line
+    radius;
+
+    constructor(radius) {
+      this.radius = radius;
     }
 
     getArea() {
-      return Math.PI * this.line ** 2
+      return Math.PI * this.radius ** 2;
     }
     getPerimeter() {
-      return 2 * Math.PI * this.line
+      return 2 * Math.PI * this.radius;
     }
   }
 
@@ -122,6 +127,7 @@ console.groupEnd();
 console.groupCollapsed('6. - https://edabit.com/challenge/qNMtrtizgssAQqP2b');
 {
   class Name {
+
     fname;
     lname;
     fullname;
@@ -155,18 +161,55 @@ console.groupEnd();
 
 console.groupCollapsed('8. - https://edabit.com/challenge/9zwdrfW99zmdRhibi');
 {
-  // ... code
+  class OnesThreesNines {
+    number;
+
+    constructor(number) {
+      this.ones = Math.floor(number / 1);
+      this.threes = Math.floor(number / 3);
+      this.nines = Math.floor(number / 9);
+    }
+  }
 }
 console.groupEnd();
 
 console.groupCollapsed('9. - https://edabit.com/challenge/7PA4jhWqDYJT4ixLp');
 {
-  // ... code
+  class User {
+    username;
+
+    static userCount = 0;
+
+    constructor(username) {
+      this.username = username;
+      User.userCount++;
+    }
+  }
 }
 console.groupEnd();
 
 console.groupCollapsed('10. - https://edabit.com/challenge/s5Sz2ovKsvtGxNGgn');
 {
-  // ... code
+  class Book {
+    title;
+    author;
+
+    constructor(title, author) {
+      this.title = title;
+      this.author = author;
+    }
+
+    getTitle() {
+      return `Title: ${this.title}`;
+    }
+
+    getAuthor() {
+      return `Author: ${this.author}`;
+    }
+  }
+
+  const PP = new Book('Pride and Prejudice', 'Jane Austen');
+  const H = new Book('Hamlet', 'William Shakespeare');
+  const WP = new Book('War and Peace', 'Leo Tolstoy');
 }
 console.groupEnd();
