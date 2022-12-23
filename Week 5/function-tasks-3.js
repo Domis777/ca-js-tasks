@@ -11,7 +11,7 @@ console.group("28. Sukurkite funkciją, kuri atspausdina žodį atvirkščiai 'a
   console.log(strReverse('as tave myliu'));
   console.log(strReverse('Bairis seniuk'));
   console.log('---');
-  
+
 }
 console.groupEnd();
 
@@ -54,45 +54,21 @@ console.group("30. Sukurkite funkciją, kuri taiso pastraipos klaidas");
 {
 
   function capitalizeFirstLetter(str) {
-    // code ...
+    const capLetter = str[0].toUpperCase() + str.slice(1)
+    return capLetter
   }
 
-  function splitIntoSentences(paragraph) {
-    /*
-      2.1 Atskirti pagal sakinio baigimo ženklus ir juos įsiminti
-      2.2 Pašalinti tuščius tarpus iš kairės ir dešinės
-      2.3 grąžinti objektą su dviem masyvais:
-      {
-        sentences: [sentence1, sentence2, ... , sentenceN],
-        separator: [ '.', '?', ... , '!'],
-      }
-    */
-  }
+  const fixedParagraph = (paragraph) => paragraph.split(/([.?!])/).slice(0, -1)
+    .map((sentence) => sentence.trim())
+    .map(capitalizeFirstLetter)
+    .join('')
+    .replaceAll(/\s+/g, ' ')
+    .replaceAll(' ,', ',')
+    .replaceAll(/([.?!,])([^\s])/g, '$1 $2')
 
-  function reduceEmptySpaces(str) {
-    // Jūsų sugalvota logika, kaip šalinti tarpus prieš kablelį ir kelis tarpus iš eilės
-  }
-
-  // 1.
-  function fixParagraph(paragraph) {
-    /*
-      2. Pirmiausiai suskirstome į sakinius, naudojant splitIntoSentences: 
-            string  ->  {
-                          sentences: [sentence1, sentence2, ... , sentenceN],
-                          separator: [ '.', '?', ... , '!'],
-                        }
-      3. Redaguoti kiekvieną sakinį, naudojant funkciją reduceEmptySpaces
-      4. Redaguoti kiekvieną sakinį, naudojant funkciją capitalizeFirstLetter
-      5. Sujungti sakinius su atitinkamais sakinių skiriamaisiais/baigiamaisiais ženklais
-      6. Grąžinti rezultatą.
-    */
-  }
-
-  // const paragraph = '    labas , as jonas . Tave      vadina Kęstu? Taip ir žinojau  !    ';
-  // const fixedParagraph = fixParagraph(paragraph);
-  // console.log(paragraph);
-  // console.log(fixedParagraph);
-  // console.log('---');
+  const paragraph = '    labas , as jonas . Tave      vadina Kęstu? Taip ir žinojau  !    ';
+  console.log(fixedParagraph(paragraph));
+  console.log('---');
 }
 console.groupEnd();
 console.log();
@@ -123,13 +99,14 @@ console.log();
 console.group("32. Sukurkite funkciją, kuri pirmu parametru priimą <string>'ą, o antruoju skiriklį");
 {
   function explode(str, separator) {
-
+    const exp = str.split(`${separator}`)
+    return exp
   }
-  // console.log('---');
-  // console.log({
-  //   "'Man patinka sniegas', ' '": explode('Man patinka sniegas', ' '),
-  //   "'home/about/13', '/'": explode('home/about/13', '/'),
-  // })
+  console.log('---');
+  console.log({
+    "'Man patinka sniegas', ' '": explode('Man patinka sniegas', ' '),
+    "'home/about/13', '/'": explode('home/about/13', '/'),
+  })
   console.log('---');
 }
 console.groupEnd();
